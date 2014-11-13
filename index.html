@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Your Website</title>
+	<script src="http://code.jquery.com/qunit/qunit-1.15.0.js"></script>
+	<script src="updated_split.js"></script> 
+
+	<script>
+  function test(then, expected) {
+    results.total++;
+    var result = splitSentence(then);
+    if (result != expected) {
+      results.bad++;
+      console.log("Expected " + expected +
+        ", but was " + result);
+    }
+  }
+  var results = {
+    total: 0,
+    bad: 0
+  };
+  test("A new  sentence that has multiple    spaces in it 1", ["A", "new", "sentence", "that", "has", "multiple", "spaces", "in", "it", "1"]);
+  test("A new  sentence thathasmultiple    spaces in it 2", ["A", "new", "sentence", "thathasmultiple", "spaces", "in", "it", "2"]);
+  test("  A new  sentence thathasmultiple    spaces in it  3 ", ["A", "new", "sentence", "thathasmultiple", "spaces", "in", "it", "3"]);
+  console.log("Of " + results.total + " tests, " +
+    results.bad + " failed, " +
+    (results.total - results.bad) + " passed.");
+  </script>
+
+</head>
+<body>
+</body>
+</html>

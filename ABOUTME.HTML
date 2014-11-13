@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html ng-app='app'>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Your Website</title>		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>     
+  		<script type="text/javascript" src="src/app.js"></script>  
+  		<script type="text/javascript" src="src/services/dataService.js"></script>
+ 	</head>
+	<body>
+		<div id="myPage" ng-controller="MainCtrl">
+		<h1>Hy my name is {{myName}}</h1>
+		<p>{{aboutMe}}</p>
+		<input type="text" name="name" ng-model="myName">
+		<input type="text" name="aboutMeUrl" ng-model="aboutmeurl"/>
+		<button ng-click="fetchAboutMeInfo()">GO</button>
+		</div>
+	</body>
+</html>
+
+
